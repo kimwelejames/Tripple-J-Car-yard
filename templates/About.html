@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Tripple J Car Yard</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            color: #002147;
+        }
+        .header, .footer {
+            background-color: #002147;
+            color: #FFD700;
+            padding: 15px 0;
+        }
+        .about-us {
+            padding: 60px 0;
+            background-color: #f5f5f5;
+            color: #002147;
+        }
+        .about-us h1, .about-us h2, .about-us h3 {
+            color: #002147;
+        }
+        .about-us img {
+            width: 100%;
+            max-width: 300px;
+            height: 300px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+        .about-us p {
+            margin-bottom: 20px;
+        }
+        .about-us ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        .about-us ul li {
+            background: #FFD700;
+            color: #002147;
+            margin-bottom: 10px;
+            padding: 10px;
+            border-radius: 5px;
+        }
+        .footer {
+            background-color: #002147; /* Darker background for contrast */
+            color: #FFD700; /* Light text color for readability */
+            padding: 40px 0;
+            text-align: center;
+        }
+        .footer a {
+            color: #FFD700; /* Button text color */
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 1em;
+            transition: color 0.3s ease;
+        }
+        .footer a:hover {
+            color: #FFEB3B; /* Hover color for links */
+        }
+        .footer .social-media {
+            margin: 20px 0;
+        }
+        .footer .social-media a {
+            margin: 0 10px;
+            color: #FFD700; /* Social media icon color */
+            font-size: 1.5em;
+            transition: color 0.3s ease;
+        }
+        .footer .social-media a:hover {
+            color: #FFEB3B; /* Hover color for icons */
+        }
+        .footer .social-media a.facebook {
+            color: #3b5998;
+        }
+        .footer .social-media a.twitter {
+            color: #1da1f2;
+        }
+        .footer .social-media a.instagram {
+            color: #e4405f;
+        }
+        .about-us .team-member {
+            text-align: center;
+        }
+        .about-us .team-member img {
+            max-width: 150px;
+            height: 150px;
+            object-fit: cover;
+            margin: 0 auto;
+        }
+        .about-us .team-member h3 {
+            margin-top: 15px;
+        }
+        .partnership {
+            padding: 60px 0;
+            background-color: #e0e0e0;
+            text-align: center;
+        }
+        .partnership h2 {
+            margin-bottom: 40px;
+            color: #002147;
+        }
+        .partnership img {
+            max-width: 150px;
+            margin: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .partnership img:hover {
+            transform: scale(1.1);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h1>Tripple J Car Yard</h1>
+                </div>
+                <div class="col-md-6 text-right">
+                    <nav>
+                        <a href="{{ url_for('Index') }}">Home</a> |
+                        <a href="#">About Us</a> |
+                        <a href="{{ url_for('Fleet') }}">Services</a> |
+                        <a href="{{ url_for('Contact') }}">Contact</a> |
+                        <a href="{{ url_for('Booknow') }}" class="btn btn-warning">Book Now</a>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section class="about-us">
+        <div class="container">
+            <h1>About Us</h1>
+            <p>Welcome to Tripple J Car Yard! We are dedicated to providing luxury and high-performance vehicles for an exceptional driving experience.</p>
+
+            <h2>Our Mission</h2>
+            <p>To deliver unparalleled luxury and comfort on the road, ensuring every journey is memorable.</p>
+
+            <h2>Our Vision</h2>
+            <p>To become the leading provider of luxury vehicles, known for our exceptional service and innovative solutions.</p>
+
+            <h2>Our Team</h2>
+            <div class="row">
+                <div class="col-md-4 team-member">
+                    <img src="{{ url_for('static', filename='Images/man.jpg') }}" alt="CEO">
+                    <h3>Joshua Kimwele</h3>
+                    <p>Founder & CEO</p>
+                </div>
+                <div class="col-md-4 team-member">
+                    <img src="{{ url_for('static', filename='Images/woman.jpg') }}" alt="Team Member 2">
+                    <h3>Beutine Keziah</h3>
+                    <p>Head of Operations</p>
+                </div>
+                <div class="col-md-4 team-member">
+                    <img src="{{ url_for('static', filename='Images/per.jpg') }}" alt="Team Member 2">
+                    <h3>Tiffany Jones</h3>
+                    <p>Fleet Management</p>
+                </div>
+                <!-- Add more team members as needed -->
+            </div>
+
+            <h2>Our Values</h2>
+            <p>Integrity, Excellence, and Innovation are at the heart of everything we do.</p>
+
+            <h2>Achievements</h2>
+            <ul>
+                <li>Best Luxury Car Provider Award 2024</li>
+                <li>Top Rated Customer Service 2023</li>
+            </ul>
+
+            <h2>Contact Us</h2>
+            <p>For more information, feel free to contact us.</p>
+        </div>
+    </section>
+
+    <section class="partnership">
+        <div class="container">
+            <h2>In Partnership With</h2>
+            <div class="row justify-content-center">
+                <div class="col-md-2">
+                    <img src="{{ url_for('static', filename='Images/arms.jpg') }}" alt="Karibu Kenya">
+                </div>
+                <div class="col-md-2">
+                    <img src="{{ url_for('static', filename='Images/Mb.jpg') }}" alt="Mercedes Benz">
+                </div>
+                <div class="col-md-2">
+                    <img src="{{ url_for('static', filename='Images/Mw.jpg') }}" alt="BMW">
+                </div>
+                <div class="col-md-2">
+                    <img src="{{ url_for('static', filename='Images/SDG.jpg') }}" alt="SDG">
+                </div>
+                <div class="col-md-2">
+                    <img src="{{ url_for('static', filename='Images/Magic.jpg') }}" alt="254">
+                </div>
+            </div>
+        </div>
+    </section>
+
+  <footer class="footer">
+    <div class="container text-center">
+        <p>&copy; 2024 Tripple J Car Yard. All rights reserved.</p>
+        <div class="social-media">
+            <a href="#" class="facebook" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" class="twitter" title="Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="#" class="instagram" title="Instagram"><i class="fab fa-instagram"></i></a>
+        </div>
+        <nav>
+            <a href="{{ url_for('Policy') }}">Privacy Policy</a> |
+            <a href="{{ url_for('Ts') }}">Terms of Service</a>
+        </nav>
+    </div>
+</footer>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

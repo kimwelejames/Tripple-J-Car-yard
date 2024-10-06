@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Fleet - Tripple J Car Yard</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            color: #002147;
+        }
+        .header, .footer {
+            background-color: #002147;
+            color: #FFD700;
+            padding: 15px 0;
+        }
+        .header nav a, .footer a {
+            color: #FFD700;
+            margin: 0 10px;
+            text-decoration: none;
+        }
+        .header nav a.btn {
+            color: #002147;
+        }
+        .hero {
+            background: url('{{ url_for('static', filename='Images/nap.jpg') }}') no-repeat center center;
+            background-size: cover;
+            color: #FFD700;
+            padding: 100px 0;
+            text-align: center;
+            position: relative;
+        }
+        .hero::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            background: rgba(0, 33, 71, 0.7); /* Adds a dark overlay */
+        }
+        .hero h1, .hero p {
+            position: relative;
+            z-index: 1;
+        }
+        .features {
+            padding: 60px 0;
+            background-color: #f5f5f5;
+        }
+        .vehicle-card {
+            margin-bottom: 30px;
+            overflow: hidden;
+            position: relative;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: transform 0.3s ease-in-out;
+        }
+        .vehicle-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+        .vehicle-card:hover {
+            transform: scale(1.05);
+        }
+        .vehicle-info {
+            display: none;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(0, 33, 71, 0.8);
+            color: #FFD700;
+            text-align: center;
+            padding: 10px;
+            border-bottom-left-radius: 10px;
+            border-bottom-right-radius: 10px;
+        }
+        .vehicle-card.show-info .vehicle-info {
+            display: block;
+        }
+        .vehicle-info h5 {
+            margin: 10px 0;
+        }
+        .vehicle-info p {
+            margin: 5px 0;
+        }
+        .footer {
+            background-color: #002147;
+            color: #FFD700;
+            padding: 40px 0;
+            text-align: center;
+        }
+        .footer a {
+            color: #FFD700;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 1em;
+            transition: color 0.3s ease;
+        }
+        .footer a:hover {
+            color: #FFEB3B;
+        }
+        .footer .social-media {
+            margin: 20px 0;
+        }
+        .footer .social-media a {
+            margin: 0 10px;
+            color: #FFD700;
+            font-size: 1.5em;
+            transition: color 0.3s ease;
+        }
+        .footer .social-media a:hover {
+            color: #FFEB3B;
+        }
+        .footer .social-media a.facebook {
+            color: #3b5998;
+        }
+        .footer .social-media a.twitter {
+            color: #1da1f2;
+        }
+        .footer .social-media a.instagram {
+            color: #e4405f;
+        }
+    </style>
+    <script>
+        function toggleInfo(card) {
+            card.classList.toggle('show-info');
+        }
+    </script>
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h1>Tripple J Car Yard</h1>
+                </div>
+                <div class="col-md-6 text-right">
+                    <nav>
+                        <a href="{{ url_for('Index') }}">Home</a> |
+                        <a href="{{ url_for('About') }}">About Us</a> |
+                        <a href="{{ url_for('Fleet') }}">Fleet</a> |
+                        <a href="{{ url_for('Contact') }}">Contact</a> |
+                        <a href="{{ url_for('Booknow') }}" class="btn btn-warning">Book Now</a>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <h1>Our Fleet</h1>
+            <p>Explore our range of luxury and high-performance vehicles.</p>
+        </div>
+    </section>
+
+    <section class="features">
+        <div class="container">
+            <div class="row">
+                <!-- Vehicle Images Grid -->
+                <div class="col-md-4 vehicle-card" onclick="toggleInfo(this)">
+                    <img src="{{ url_for('static', filename='Images/audi.jpg') }}" alt="Audi Sport">
+                    <div class="vehicle-info">
+                        <h5>Audi Sport</h5>
+                        <p>Price: $200/day</p>
+                        <p>Fuel Capacity: 60L</p>
+                    </div>
+                </div>
+                <div class="col-md-4 vehicle-card" onclick="toggleInfo(this)">
+                    <img src="{{ url_for('static', filename='Images/di.jpg') }}" alt="Audi">
+                    <div class="vehicle-info">
+                        <h5>Audi</h5>
+                        <p>Price: $150/day</p>
+                        <p>Fuel Capacity: 55L</p>
+                    </div>
+                </div>
+                <div class="col-md-4 vehicle-card" onclick="toggleInfo(this)">
+                    <img src="{{ url_for('static', filename='Images/gari.jpg') }}" alt="BMW">
+                    <div class="vehicle-info">
+                        <h5>BMW</h5>
+                        <p>Price: $180/day</p>
+                        <p>Fuel Capacity: 65L</p>
+                    </div>
+                </div>
+                <!-- Additional vehicle cards inside the row -->
+                <div class="col-md-4 vehicle-card" onclick="toggleInfo(this)">
+                    <img src="{{ url_for('static', filename='Images/fer.jpg') }}" alt="Ferrari">
+                    <div class="vehicle-info">
+                        <h5>Ferrari</h5>
+                        <p>Price: $300/day</p>
+                        <p>Fuel Capacity: 80L</p>
+                    </div>
+                </div>
+                <div class="col-md-4 vehicle-card" onclick="toggleInfo(this)">
+                    <img src="{{ url_for('static', filename='Images/lam.jpg') }}" alt="Lamborghini">
+                    <div class="vehicle-info">
+                        <h5>Lamborghini</h5>
+                        <p>Price: $350/day</p>
+                        <p>Fuel Capacity: 85L</p>
+                    </div>
+                </div>
+                <div class="col-md-4 vehicle-card" onclick="toggleInfo(this)">
+                    <img src="{{ url_for('static', filename='Images/por.jpg') }}" alt="Porsche">
+                    <div class="vehicle-info">
+                        <h5>Porsche</h5>
+                        <p>Price: $220/day</p>
+                        <p>Fuel Capacity: 70L</p>
+                    </div>
+                </div>
+                <div class="col-md-4 vehicle-card" onclick="toggleInfo(this)">
+                    <img src="{{ url_for('static', filename='Images/G.jpg') }}" alt="G Class">
+                    <div class="vehicle-info">
+                        <h5>G Class</h5>
+                        <p>Price: $250/day</p>
+                        <p>Fuel Capacity: 75L</p>
+                    </div>
+                </div>
+                <div class="col-md-4 vehicle-card" onclick="toggleInfo(this)">
+                    <img src="{{ url_for('static', filename='Images/rolls.jpg') }}" alt="Rolls-Royce">
+                    <div class="vehicle-info">
+                        <h5>Rolls-Royce</h5>
+                        <p>Price: $400/day</p>
+                        <p>Fuel Capacity: 90L</p>
+                    </div>
+                </div>
+                <div class="col-md-4 vehicle-card" onclick="toggleInfo(this)">
+                    <img src="{{ url_for('static', filename='Images/rr.jpg') }}" alt="Range Rover">
+                    <div class="vehicle-info">
+                        <h5>Range Rover</h5>
+                        <p>Price: $250/day</p>
+                        <p>Fuel Capacity: 75L</p>
+                    </div>
+                </div>
+                <div class="col-md-4 vehicle-card" onclick="toggleInfo(this)">
+                    <img src="{{ url_for('static', filename='Images/jag.jpg') }}" alt="Jaguar">
+                    <div class="vehicle-info">
+                        <h5>Jaguar</h5>
+                        <p>Price: $230/day</p>
+                        <p>Fuel Capacity: 68L</p>
+                    </div>
+                </div>
+                <div class="col-md-4 vehicle-card" onclick="toggleInfo(this)">
+                    <img src="{{ url_for('static', filename='Images/mas.jpg') }}" alt="Maserati">
+                    <div class="vehicle-info">
+                        <h5>Maserati</h5>
+                        <p>Price: $280/day</p>
+                        <p>Fuel Capacity: 70L</p>
+                    </div>
+                </div>
+                <div class="col-md-4 vehicle-card" onclick="toggleInfo(this)">
+                    <img src="{{ url_for('static', filename='Images/cyber.jpg') }}" alt="Tesla">
+                    <div class="vehicle-info">
+                        <h5>Tesla</h5>
+                        <p>Price: $220/day</p>
+                        <p>Battery Range: 400 km</p>
+                    </div>
+                </div>
+                <div class="col-md-4 vehicle-card" onclick="toggleInfo(this)">
+                    <img src="{{ url_for('static', filename='Images/toy.jpg') }}" alt="Toyota">
+                    <div class="vehicle-info">
+                        <h5>Toyota</h5>
+                        <p>Price: $130/day</p>
+                        <p>Fuel Capacity: 60L</p>
+                    </div>
+                </div>
+                <div class="col-md-4 vehicle-card" onclick="toggleInfo(this)">
+                    <img src="{{ url_for('static', filename='Images/cr.jpg') }}" alt="Honda">
+                    <div class="vehicle-info">
+                        <h5>Honda</h5>
+                        <p>Price: $120/day</p>
+                        <p>Fuel Capacity: 55L</p>
+                    </div>
+                </div>
+                <div class="col-md-4 vehicle-card" onclick="toggleInfo(this)">
+                    <img src="{{ url_for('static', filename='Images/fo.jpg') }}" alt="Ford">
+                    <div class="vehicle-info">
+                        <h5>Ford</h5>
+                        <p>Price: $140/day</p>
+                        <p>Fuel Capacity: 65L</p>
+                    </div>
+                </div>
+                <div class="col-md-4 vehicle-card" onclick="toggleInfo(this)">
+                    <img src="{{ url_for('static', filename='Images/f.jpg') }}" alt="Chevloret">
+                    <div class="vehicle-info">
+                        <h5>Chevrolet</h5>
+                        <p>Price: $160/day</p>
+                        <p>Fuel Capacity: 70L</p>
+                    </div>
+                </div>
+            </div> <!-- Close the row div -->
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <p>© 2024 Tripple J Car Yard. All rights reserved.</p>
+            <div class="social-media">
+                <a href="#" class="facebook"><i class="fab fa-facebook"></i></a>
+                <a href="#" class="twitter"><i class="fab fa-twitter"></i></a>
+                <a href="#" class="instagram"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

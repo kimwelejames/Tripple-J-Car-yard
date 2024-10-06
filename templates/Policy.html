@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy - Tripple J Car Yard</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            color: #002147;
+        }
+        .header, .footer {
+            background-color: #002147;
+            color: #FFD700;
+            padding: 15px 0;
+        }
+        .header a, .footer a {
+            color: #FFD700;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+        .footer {
+            padding: 40px 0;
+        }
+        .container {
+            padding: 40px 0;
+        }
+        .content {
+            background-color: #f9f9f9;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        h1, h2 {
+            color: #002147;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h1>Tripple J Car Yard</h1>
+                </div>
+                <div class="col-md-6 text-right">
+                    <nav>
+                        <a href="{{ url_for('Index') }}">Home</a> |
+                        <a href="{{ url_for('About') }}">About Us</a> |
+                        <a href="{{ url_for('Fleet') }}">Services</a> |
+                        <a href="{{ url_for('Contact') }}">Contact</a> |
+                        <a href="{{ url_for('Booknow') }}" class="btn btn-warning">Book Now</a>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="content">
+            <h1>Privacy Policy</h1>
+            <p>Last updated: August 2, 2024</p>
+            <p>Your privacy is important to us. This privacy statement explains what personal data Tripple J Car Yard collects and uses in connection with our website.</p>
+
+            <h2>1. Information We Collect</h2>
+            <p>We may collect the following types of information:</p>
+            <ul>
+                <li>Personal Identification Information (e.g., name, email address, phone number)</li>
+                <li>Booking Information (e.g., car details, dates, and times)</li>
+                <li>Payment Information (e.g., payment method details)</li>
+                <li>Technical Data (e.g., IP address, browser type)</li>
+            </ul>
+
+            <h2>2. How We Use Your Information</h2>
+            <p>We use the information we collect to:</p>
+            <ul>
+                <li>Process and manage bookings</li>
+                <li>Provide customer support</li>
+                <li>Send promotional offers and updates</li>
+                <li>Improve our services and website</li>
+            </ul>
+
+            <h2>3. Data Sharing and Disclosure</h2>
+            <p>We do not sell or trade your personal information to outside parties. We may share information with:</p>
+            <ul>
+                <li>Service providers who assist us in operating our website and providing services</li>
+                <li>Legal authorities if required by law</li>
+            </ul>
+
+            <h2>4. Security</h2>
+            <p>We implement appropriate security measures to protect your personal information from unauthorized access, alteration, disclosure, or destruction.</p>
+
+            <h2>5. Changes to This Privacy Policy</h2>
+            <p>We may update this privacy policy from time to time. We encourage you to review this policy periodically for any changes.</p>
+
+            <h2>6. Contact Us</h2>
+            <p>If you have any questions about this privacy policy or our practices, please contact us at:</p>
+            <p>Email: <a href="mailto:support@tripplejcar.com">support@tripplejcar.com</a></p>
+            <p>Phone: +254 718 336 542</p>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 Tripple J Car Yard. All rights reserved.</p>
+            <nav>
+                <a href="{{ url_for('Policy') }}">Privacy Policy</a> |
+                <a href="{{ url_for('Ts') }}">Terms of Service</a>
+            </nav>
+            <div class="social-media">
+                <a href="#" class="facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" class="twitter"><i class="fab fa-twitter"></i></a>
+                <a href="#" class="instagram"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

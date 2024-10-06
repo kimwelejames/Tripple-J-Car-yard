@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terms of Service - Tripple J Car Yard</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            color: #002147;
+        }
+        .header, .footer {
+            background-color: #002147;
+            color: #FFD700;
+            padding: 15px 0;
+        }
+        .header a, .footer a {
+            color: #FFD700;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+        .footer {
+            padding: 40px 0;
+        }
+        .container {
+            padding: 40px 0;
+        }
+        .content {
+            background-color: #f9f9f9;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        h1, h2 {
+            color: #002147;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="container text-center">
+            <h1>Tripple J Car Yard</h1>
+            <nav>
+                <a href="{{ url_for('Index') }}">Home</a>
+                <a href="{{ url_for('About') }}">About Us</a>
+                <a href="{{ url_for('Fleet') }}">Services</a>
+                <a href="{{ url_for('Contact') }}">Contact</a>
+                <a href="{{ url_for('Booknow') }}" class="btn btn-warning">Book Now</a>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="content">
+            <h1>Terms of Service</h1>
+            <p>Welcome to Tripple J Car Yard! These terms and conditions outline the rules and regulations for the use of our services.</p>
+
+            <h2>1. Acceptance of Terms</h2>
+            <p>By using our services, you agree to comply with and be bound by these terms of service.</p>
+
+            <h2>2. Service Use</h2>
+            <p>Our services are provided as described on our website. We reserve the right to modify or discontinue our services at any time.</p>
+
+            <h2>3. User Responsibilities</h2>
+            <p>You agree to use our services in accordance with all applicable laws and regulations.</p>
+
+            <h2>4. Limitation of Liability</h2>
+            <p>We shall not be liable for any damages arising from the use of our services, except as required by law.</p>
+
+            <h2>5. Changes to Terms</h2>
+            <p>We may update these terms of service from time to time. It is your responsibility to review these terms periodically.</p>
+
+            <h2>6. Contact Information</h2>
+            <p>If you have any questions about these terms of service, please contact us at [Kimwelejames@outlook.com].</p>
+        </div>
+    </div>
+
+    <footer class="footer text-center">
+        <p>&copy; 2024 Tripple J Car Yard. All rights reserved.</p>
+        <nav>
+            <a href="{{ url_for('Policy') }}">Privacy Policy</a> |
+            <a href="{{ url_for('Ts') }}">Terms of Service</a>
+        </nav>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
